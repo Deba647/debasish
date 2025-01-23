@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saraswati Puja Invitation</title>
+  <style>
+    /* Flower Background */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('Image/s1.jpg'); /* Replace with your actual flower background image URL */
+      background-size: cover;
+      background-position: center;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      max-width: 500px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .container input, .container button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .container button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .container button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="nameForm">
+    <h2><strong>THE BOYS CLUB PUJA PRATISTHANA INVITE YOU</strong></h2>
+    <p>Please enter your name to accept the invitation:</p>
+    <input type="text" id="nameInput" placeholder="Your Name" required>
+    <button onclick="submitName()">Submit</button>
+  </div>
+
+  <script>
+    function submitName() {
+      const name = document.getElementById('nameInput').value.trim();
+
+      if (name === "") {
+        alert("Please enter your name.");
+        return;
+      }
+
+      // Redirect to invitation page with the name as a URL parameter
+      const invitationUrl = `invitation.html?name=${encodeURIComponent(name)}`;
+      window.location.href = invitationUrl;
+    }
+  </script>
+</body>
+</html>
